@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "html": "0.0.10",
+    "mkdirp": "^0.5.1",
     "node-static": "^0.7.8",
     "npm-run-all": "^2.3.0",
     "watch": "^0.19.1",

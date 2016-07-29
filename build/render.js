@@ -3,6 +3,9 @@ var m = require('mithril')
 var app = require('../client/main')
 var html = require('html')
 var fs = require('fs')
+var mkdirp = require('mkdirp')
+
+mkdirp.sync('dist')
 
 var page = function(content){
     return m('html'
