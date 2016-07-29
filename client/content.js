@@ -1,22 +1,22 @@
 var m = require('mithril')
 
-var Main = {
-    controller: function(){
-        var clicks = m.prop(0)
-
-        function onclick(){
-            clicks(clicks() + 1)
-        }
-
-        return { onclick: onclick , clicks: clicks }
-    }
-    ,view: function(ctrl){
-        return m('div.content'
-            ,m('h1', 'This is the content')
-            ,m('button', { onclick: ctrl.onclick }, 'Click Me')
-            ,m('p', 'Clicks: '+ ctrl.clicks() )
-        )
-    }
+var vm = {
+    clicks: m.prop(0)
 }
 
-module.exports = Main
+function onclick(){
+    vm.clicks(vm.clicks() + 1)
+}
+
+function view(ctrl){
+    return m('div.content'
+        ,m('h1', 'This is the content')
+        ,m('button', { onclick: onclick }, 'Click Me')
+        ,m('p', 'Clicks: '+ vm.clicks() )
+    )
+}
+
+module.exports = {
+    view: view
+    ,vm: vm
+}
