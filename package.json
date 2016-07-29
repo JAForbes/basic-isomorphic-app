@@ -1,0 +1,28 @@
+{
+  "name": "isomorphic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "npm-run-all --parallel dev:** --print-label",
+    "dev:render": "watch \"node build/render.js\" client",
+    "dev:server": "static -p 80 dist",
+    "dev:compile": "watchify client/index.js -o dist/bundle.js --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "james.a.forbes@gmail.com <=> (http://james-forbes.com)",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^13.1.0",
+    "express": "^4.14.0",
+    "mithril": "^0.2.5",
+    "mithril-node-render": "^0.5.0"
+  },
+  "devDependencies": {
+    "html": "0.0.10",
+    "npm-run-all": "^2.3.0",
+    "watch": "^0.19.1",
+    "watchify": "^3.7.0"
+  }
+}
